@@ -1,0 +1,23 @@
+{
+  "name": "cookie.js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/cookie.js",
+  "scripts": {
+    "start": "gulp server",
+    "build": "gulp build"
+  },
+  "author": "lijialin",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.5",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-jslint": "^1.0.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-run-sequence": "^0.3.2",
+    "gulp-uglify": "^1.5.3"
+  },
+  "dependencies": {}
+}

@@ -12,7 +12,17 @@
     },
     isString: function (str) {
       return ({}).toString.call(str) === '[object String]'
-    }
+    },
+    getKeys: Object.keys || function (obj) {
+      var keys = [],
+         key = ''
+      for (key in obj) {
+        if (obj.hasOwnProperty(key)) {
+          keys.push(key)
+        }
+      }
+      return keys
+    },
   }
   
   function Cookie () {}
@@ -49,6 +59,7 @@
     var cookie = document.cookie ? document.cookie.split(';') : []
     var cookies = {}
     var i = 0, len = cookie.length
+    // console.log(cookie)
     for (; i<len; i++) {
       var part = cookie[i].split('=')
       cookies[decodeURIComponent(part[0].trim())] = decodeURIComponent(part[1].trim())
@@ -62,14 +73,16 @@
     }
     skey = utils.isArray(skey) ? skey : [skey]
     for (var i = 0, len = skey.length; i<len; i++) {
-      this.set(skey, '', {
+      this.set(skey[i], '', {
         expires: -1
       })
     }
   } 
 
   Cookie.prototype.removeAll = function () {
-    document.cookie = ''
+    var keys = utils.getKeys(this.getAll())
+    console.log(keys)
+    this.remove(keys)
   }
 
   if (typeof define === 'function' && define.amd) {

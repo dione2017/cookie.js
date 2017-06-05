@@ -36,6 +36,7 @@ gulp.task('copyJs', () => {
     .pipe(jslint())
     // .pipe(jslint.reporter( 'my-reporter' ))
     .pipe(uglify())
+    .pipe(rename({ suffix: ".min" }))
     .pipe(gulp.dest(buildPath))
 })
 

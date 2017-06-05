@@ -14,15 +14,14 @@
       return ({}).toString.call(str) === '[object String]'
     },
     getKeys: Object.keys || function (obj) {
-      var keys = [],
-         key = ''
+      var keys = [], key = ''
       for (key in obj) {
         if (obj.hasOwnProperty(key)) {
           keys.push(key)
         }
       }
       return keys
-    },
+    }
   }
   
   function Cookie () {}
@@ -32,7 +31,7 @@
   }    
 
   Cookie.prototype.set = function (skey, val, opts) {
-    if (!skey && typeof skey !== 'string') {
+    if (!utils.isString(skey) || !skey) {
       return false
     }
     var optStr = []
@@ -59,7 +58,6 @@
     var cookie = document.cookie ? document.cookie.split(';') : []
     var cookies = {}
     var i = 0, len = cookie.length
-    // console.log(cookie)
     for (; i<len; i++) {
       var part = cookie[i].split('=')
       cookies[decodeURIComponent(part[0].trim())] = decodeURIComponent(part[1].trim())
@@ -81,7 +79,6 @@
 
   Cookie.prototype.removeAll = function () {
     var keys = utils.getKeys(this.getAll())
-    console.log(keys)
     this.remove(keys)
   }
 

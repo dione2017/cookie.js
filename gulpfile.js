@@ -32,9 +32,9 @@ gulp.task('clean', () => {
 })
 
 gulp.task('copyJs', () => {
-  return gulp.src(srcPath + '/js/**/*.js')
+  return gulp.src(srcPath + '/**/*.js')
     .pipe(jslint())
-    .pipe(jslint.reporter( 'my-reporter' ))
+    // .pipe(jslint.reporter( 'my-reporter' ))
     .pipe(uglify())
     .pipe(gulp.dest(buildPath))
 })

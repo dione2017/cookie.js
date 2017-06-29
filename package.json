@@ -1,14 +1,26 @@
 {
-  "name": "cookie.js",
-  "version": "1.0.0",
-  "description": "",
-  "main": "./src/cookie.js",
+  "name": "cookies-util",
+  "version": "0.0.2",
+  "description": "cookie",
+  "keywords": [
+    "cookie",
+    "cookies"
+  ],
+  "main": "src/cookie.js",
   "scripts": {
     "start": "gulp server",
     "build": "gulp build"
   },
-  "author": "lijialin",
-  "license": "ISC",
+  "author": "lijialin <476989623@qq.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:dione2017/cookie.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dione2017/cookie.js/issues",
+    "email": "476989623@qq.com"
+  },
   "devDependencies": {
     "browser-sync": "^2.18.5",
     "del": "^2.2.2",
@@ -19,5 +31,8 @@
     "gulp-run-sequence": "^0.3.2",
     "gulp-uglify": "^1.5.3"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "engines": {
+    "node": ">= 0.6"
+  }
 }
